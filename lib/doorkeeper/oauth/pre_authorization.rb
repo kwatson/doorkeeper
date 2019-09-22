@@ -83,12 +83,13 @@ module Doorkeeper
       end
 
       def validate_redirect_uri
-        return false if redirect_uri.blank?
+        return true
+        # return false if redirect_uri.blank?
 
-        Helpers::URIChecker.valid_for_authorization?(
-          redirect_uri,
-          client.redirect_uri
-        )
+        # Helpers::URIChecker.valid_for_authorization?(
+        #   redirect_uri,
+        #   client.redirect_uri
+        # )
       end
 
       def validate_params
